@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 17042002  # Mật khẩu root của MySQL
+      MYSQL_DATABASE: lab        # Tên database sẽ tạo khi khởi động
+      MYSQL_USER: tntt                    # Tên người dùng MySQL
+      MYSQL_PASSWORD: T@i17042002     # Mật khẩu cho người dùng trên
+    ports:
+      - "3306:3306"                       # Liên kết cổng 3306 của container với cổng 3306 của máy chủ
+    volumes:
+      - mysql_data:/var/lib/mysql         # Lưu trữ dữ liệu của MySQL
+
+volumes:
+  mysql_data:
